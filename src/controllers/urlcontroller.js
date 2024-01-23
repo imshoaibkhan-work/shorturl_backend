@@ -1,8 +1,9 @@
 const validUrl = require("valid-url");
 const shortid = require("shortid");
+const dotenv = require("dotenv");
 const URL = require("../models/Url");
 
-const BASE_URL = "http://localhost:8000";
+const BASE_URL = process.env.BASEURL;
 
 const shortenUrl = async (req, res) => {
   const { originalUrl } = req.body;
